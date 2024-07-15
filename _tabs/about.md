@@ -50,21 +50,21 @@ Eager to absorb knowledge 💡, I enjoy diving into new tech and using it to sol
 
 <h1 align="center"> Languages and Tools 
 <br>
-<img class="no-interaction" src="https://img.shields.io/badge/-C++-00599C?style=flat-square&logo=cplusplus&logoColor=white" />
-<img class="no-interaction" src="https://img.shields.io/badge/-C-A8B9CC?style=flat-square&logo=c&logoColor=white" />
-<img class="no-interaction" src="https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=python&logoColor=yellow" />
-<img class="no-interaction" src="https://img.shields.io/badge/-Assembly-808080?style=flat-square&logo=assemblyscript&logoColor=white" />
-<img class="no-interaction" src="https://img.shields.io/badge/-Linux-FCC624?style=flat-square&logo=linux&logoColor=black" />
-<img class="no-interaction" src="https://img.shields.io/badge/-Kali_Linux-557C94?style=flat-square&logo=kalilinux&logoColor=black" />
-<img class="no-interaction" src="https://img.shields.io/badge/-Operating%20Systems-0078D7?style=flat-square&logo=windows&logoColor=white" />
-<img class="no-interaction" src="https://img.shields.io/badge/-Problem%20Solving-4d4d4d?style=flat-square" />
+<img class="no-interaction" src="https://img.shields.io/badge/-C++-00599C?style=flat-square&logo=cplusplus&logoColor=white" alt="" />
+<img class="no-interaction" src="https://img.shields.io/badge/-C-A8B9CC?style=flat-square&logo=c&logoColor=white" alt="" />
+<img class="no-interaction" src="https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=python&logoColor=yellow" alt="" />
+<img class="no-interaction" src="https://img.shields.io/badge/-Assembly-808080?style=flat-square&logo=assemblyscript&logoColor=white" alt="" />
+<img class="no-interaction" src="https://img.shields.io/badge/-Linux-FCC624?style=flat-square&logo=linux&logoColor=black" alt="" />
+<img class="no-interaction" src="https://img.shields.io/badge/-Kali_Linux-557C94?style=flat-square&logo=kalilinux&logoColor=black" alt="" />
+<img class="no-interaction" src="https://img.shields.io/badge/-Operating%20Systems-0078D7?style=flat-square&logo=windows&logoColor=white" alt="" />
+<img class="no-interaction" src="https://img.shields.io/badge/-Problem%20Solving-4d4d4d?style=flat-square" alt="" />
 <br>
-<img class="no-interaction" src="https://img.shields.io/badge/-IDA%20Pro-030303?style=flat-square" />
-<img class="no-interaction" src="https://img.shields.io/badge/-Ghidra-ff4500?style=flat-square" />
-<img class="no-interaction" src="https://img.shields.io/badge/-Binary_Ninja-da0000?style=flat-square" />
-<img class="no-interaction" src="https://img.shields.io/badge/-VBox-183A61?style=flat-square&logo=virtualbox&logoColor=white" />
-<img class="no-interaction" src="https://img.shields.io/badge/-xdbg-2b2b2b?style=flat-square" />
-<img class="no-interaction" src="https://img.shields.io/badge/-dnSpy-2b2b2b?style=flat-square&logo=.net&logoColor=purple" />
+<img class="no-interaction" src="https://img.shields.io/badge/-IDA%20Pro-030303?style=flat-square" alt="" />
+<img class="no-interaction" src="https://img.shields.io/badge/-Ghidra-ff4500?style=flat-square" alt="" />
+<img class="no-interaction" src="https://img.shields.io/badge/-Binary_Ninja-da0000?style=flat-square" alt="" />
+<img class="no-interaction" src="https://img.shields.io/badge/-VBox-183A61?style=flat-square&logo=virtualbox&logoColor=white" alt="" />
+<img class="no-interaction" src="https://img.shields.io/badge/-xdbg-2b2b2b?style=flat-square" alt="" />
+<img class="no-interaction" src="https://img.shields.io/badge/-dnSpy-2b2b2b?style=flat-square&logo=.net&logoColor=purple" alt="" />
 </h1>
   
 <br>
