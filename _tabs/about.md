@@ -71,5 +71,5 @@ Eager to absorb knowledge 💡, I enjoy diving into new tech and using it to sol
 
 <div class="align-container">
   <img class="no-interaction" src="https://lanyard.cnrad.dev/api/605894319408283678?&bg=00000000" alt="">
-  <img src="https://github.com/ELJoOker2004/ELJoOker2004/assets/62572632/8f29c932-fd91-46e8-a984-60142a99f5b5" width="360">
+  <img src="https://github.com/ELJoOker2004/ELJoOker2004/assets/62572632/8f29c932-fd91-46e8-a984-60142a99f5b5" width="360" alt="">
 </div>
