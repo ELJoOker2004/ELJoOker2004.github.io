@@ -12,7 +12,7 @@ image:
 # Write-up
 
 ## Unauthentical
-**In this writeup I will share my detailed analysis for unauthentical malware.**
+**In this write-up, I will provide a comprehensive analysis of the <span style="color: cyan;">unauthentical</span> malware.**
 ### Basic Info
 
 | File type                     | Windows Portable Executable
@@ -22,15 +22,15 @@ image:
 | VirusTotal                    | https://www.virustotal.com/gui/file/3f54ee6d8acb344f9964f5ecd01d5340a80443664aa73cc1bb6fb1b60628e535/
 | First seen                    | <span style="color: red;">2024-07-15</span>
 
-It's a Windows GUI application which acts as an installer
+It's a Windows GUI application that acts as an installer.
 
 ### Static Analysis
 
-Doing some static analysis we can already see some malicious imports
+During the static analysis, we can already see some malicious imports.
 
 ![](/assets/img/posts/2024-07-15-unauthentical/1.png)
 
-But we are still not sure because most of them are essential for the installers.
+However, we are still not sure because most of them are essential for the installer.
 
 ### dynamic Analysis
 
@@ -69,11 +69,11 @@ First we see it looks for any file with these words as a part of it's name
 
 ![](/assets/img/posts/2024-07-15-unauthentical/3.png)
 
-A try to access discord's token folder
+It tries to access Discord's token folder.
 
 ![](/assets/img/posts/2024-07-15-unauthentical/4.png)
 
-Alongside with access chrome, edge, brave and a lot of other browsers and sensitive directories that contains important data
+It also accesses Chrome, Edge, Brave, and many other browsers and sensitive directories that contain important data.
 
 ![](/assets/img/posts/2024-07-15-unauthentical/5.png)
 
@@ -81,31 +81,31 @@ Alongside with access chrome, edge, brave and a lot of other browsers and sensit
 
 ![](/assets/img/posts/2024-07-15-unauthentical/7.png)
 
-which is a strong indicator for a **Stealer** 
+This is a strong indicator of a **Stealer**.
 
 ### Network Analysis
 
-Now, I moved to Wireshark to see where this data actually goes. After analyzing the entire network traffic of this malware, I found that it makes connections to different IPs, but only one is malicious. This IP is the C2 server to which the malware actually sends the gathered user data.
+Next, I used Wireshark to see where this data actually goes. After analyzing the entire network traffic of this malware, I found that it makes connections to different IPs, but only one is malicious. This IP is the C2 server to which the malware actually sends the gathered user data.
 
 | C2 Server IP                     | 178.23.190.118
 
 And this's where all the magic happens
 
-All the gathered information's we knew from the above analysis will be transmitted to that C2 server
+All the gathered information from the above analysis will be transmitted to that C2 server.
 
 ![](/assets/img/posts/2024-07-15-unauthentical/8.png)
 
-There is also a PNG being sent, after dumping it, it's a screenshot of our system will be captured and sent
+There is also a PNG being sent; after dumping it, it's a screenshot of our system that will be captured and sent.
 
 ![](/assets/img/posts/2024-07-15-unauthentical/9.png)
 
-\+ All running process, Device Information's, Installed applications, Browser History, Cookies, Opened tabs
+Along with all running processes, device information, installed applications, browser history, cookies, and opened tabs.
 
 ![](/assets/img/posts/2024-07-15-unauthentical/10.png)
 ![](/assets/img/posts/2024-07-15-unauthentical/11.png)
 ![](/assets/img/posts/2024-07-15-unauthentical/12.png)
 
-And this is where the execution's ends, there is no persistence techniques used by this malware
+And this is where the execution ends. There are no persistence techniques used by this malware.
 
 ## Conclusion
 
