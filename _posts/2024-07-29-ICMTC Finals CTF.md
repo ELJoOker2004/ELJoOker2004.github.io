@@ -1,3 +1,4 @@
+---
 title: "ICMTC CTF Finals Reverse Engineering Challenges Writeup"
 date: 2024-07-29 13:11:43 +0300
 categories: [CTF]
