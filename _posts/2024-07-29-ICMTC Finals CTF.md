@@ -4,7 +4,7 @@ date: 2024-07-29 13:11:43 +0300
 categories: [CTF]
 tags: [CTF, Cybersecurity, Reverse Engineering, Writeup]
 description: Write up of ICMTC CTF Finals Reverse Engineering Challenges.
-#last_modified_at: 2024-07-15 06:26:43 +0300
+last_modified_at: 2024-07-29 13:52:43 +0300
 image:
   path: /assets/img/posts/2024-07-29-ICMTC_Finals_CTF/head.jpg
 ---
@@ -76,9 +76,9 @@ Just run it and provide the executable path as an argument, and it will do the r
 
 Now we see the program in a much cleaner view, and we can determine how the value of **b** is being assigned. The flag here is also dynamic, as seen in the cy5azpmunsa() method.
 
-![](/assets/img/posts/2024-07-29-ICMTC_Finals_CTF/14.png)
-
 ![](/assets/img/posts/2024-07-29-ICMTC_Finals_CTF/12.png)
+
+![](/assets/img/posts/2024-07-29-ICMTC_Finals_CTF/14.png)
 
 Clicking on method5, we can now see our hardcoded key.
 
