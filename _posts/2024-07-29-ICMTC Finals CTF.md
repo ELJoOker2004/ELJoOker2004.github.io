@@ -4,7 +4,7 @@ date: 2024-07-29 13:11:43 +0300
 categories: [CTF]
 tags: [CTF, Cybersecurity, Reverse Engineering, Writeup]
 description: Write up of ICMTC CTF Finals Reverse Engineering Challenges.
-last_modified_at: 2024-07-30 7:32:43 +0300
+last_modified_at: 2024-07-30 11:30:43 +0300
 image:
   path: /assets/img/posts/2024-07-29-ICMTC_Finals_CTF/head.jpg
 ---
@@ -15,7 +15,7 @@ image:
 
 ![](/assets/img/posts/2024-07-29-ICMTC_Finals_CTF/0.png)
 
-# Now, I'll share my solution for 2 of the 3 reverse engineering challenges in the ICMTC CTF Finals. Stay tuned for the 3rd one! :)
+# Now, I'll share my solution for all reverse engineering challenges in the ICMTC CTF Finals.
 
 ## OperationQak
 ![](/assets/img/posts/2024-07-29-ICMTC_Finals_CTF/1.png)
