@@ -4,7 +4,7 @@ date: 2024-07-29 13:11:43 +0300
 categories: [CTF]
 tags: [CTF, Cybersecurity, Reverse Engineering, Writeup]
 description: Write up of ICMTC CTF Finals Reverse Engineering Challenges.
-last_modified_at: 2024-07-30 11:30:43 +0300
+last_modified_at: 2024-08-2 8:30:43 +0300
 image:
   path: /assets/img/posts/2024-07-29-ICMTC_Finals_CTF/head.jpg
 ---
@@ -213,4 +213,127 @@ print(final_string)
 ```
 `EGCERT{6d944e4c857b10dc9abb20e9550334503e996cd4}`
 
-# _**This is the end of this light writeup. Thanks for reading! I hope you enjoyed and learned something from it. I also hope the explanations were clear. If you have any questions or comments, feel free to contact me on [LinkedIn](https://www.linkedin.com/in/youssef-ayman-79092624b/) — [Discord](https://discord.com/users/605894319408283678) — [GitHub](https://www.github.com/ELJoOker2004).**_
+## Crackme ( Bonus Challenge )
+
+This challenge was released after the end of theCTF. The author, `@ghostinthehive`, decided not to publish it initially.
+
+We are provided with another windows executable file.
+
+The challenge asks for a username and password, then checks their validity.
+![](/assets/img/posts/2024-07-29-ICMTC_Finals_CTF/30.png)
+I analyzed it with IDA.
+
+The program takes my input, performs some operations, generates a value, and then passes it as an argument to a function.
+
+![](/assets/img/posts/2024-07-29-ICMTC_Finals_CTF/31.png)
+
+In this function, more operations are performed, followed by an if statement that checks specific values.
+
+[](/assets/img/posts/2024-07-29-ICMTC_Finals_CTF/32.png)
+
+Since `v6` is assigned dynamically, I need to understand how, so I'll start debugging
+
+I set a breakpoint before entering this function to see the argument it took, and it was a single byte
+
+![](/assets/img/posts/2024-07-29-ICMTC_Finals_CTF/33.png)
+
+That byte was used for XOR operations in a loop to generate another sequence of bytes. The result is stored in `v6`, and the if statement checks `if v6 != 0x62`
+
+So, now we know that `v6[0]` must equal to `0x62`
+
+Since the argument was used as the XOR key, we can determine the correct argument by XORing `0x62` (the desired value) with the first byte from `v4`.
+
+![](/assets/img/posts/2024-07-29-ICMTC_Finals_CTF/34.png)
+
+![](/assets/img/posts/2024-07-29-ICMTC_Finals_CTF/35.png)
+_little endian (0x97)_
+
+Let's try to find the correct argument 
+
+![](/assets/img/posts/2024-07-29-ICMTC_Finals_CTF/36.png)
+
+Now that we know the argument, we can take two approaches to get the flag: the lazy way and the cool way :)
+
+### Lazy solve
+
+We can enter any value as the username and password, then change the argument while debugging the program.
+
+![](/assets/img/posts/2024-07-29-ICMTC_Finals_CTF/37.png)
+![](/assets/img/posts/2024-07-29-ICMTC_Finals_CTF/38.png)
+
+Continue execution, and here is the flag :)
+![](/assets/img/posts/2024-07-29-ICMTC_Finals_CTF/39.png)
+
+### Cool solve
+As it's a crackme challenge, why not generate a keygen for any username 
+
+The operations is easy to understand, so I'll just create a c code to brute force all possible passwords on my cool nickname "ELJoOker" to get my personal password 😜
+![](/assets/img/posts/2024-07-29-ICMTC_Finals_CTF/40.png)
+
+And here is my code
+
+```c
+#include <stdio.h>
+#include <stdint.h>
+#include <string.h>
+
+char valid_chars[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+int num_valid_chars = sizeof(valid_chars) - 1;
+
+char username[] = "ELJoOker";
+
+void find_valid_password(char *password) {
+    for (int p1 = 0; p1 < num_valid_chars; p1++) {
+        for (int p2 = 0; p2 < num_valid_chars; p2++) {
+            for (int p3 = 0; p3 < num_valid_chars; p3++) {
+                for (int p4 = 0; p4 < num_valid_chars; p4++) {
+                    for (int p5 = 0; p5 < num_valid_chars; p5++) {
+                        for (int p6 = 0; p6 < num_valid_chars; p6++) {
+                            for (int p7 = 0; p7 < num_valid_chars; p7++) {
+                                for (int p8 = 0; p8 < num_valid_chars; p8++) {
+                                    password[0] = valid_chars[p1];
+                                    password[1] = valid_chars[p2];
+                                    password[2] = valid_chars[p3];
+                                    password[3] = valid_chars[p4];
+                                    password[4] = valid_chars[p5];
+                                    password[5] = valid_chars[p6];
+                                    password[6] = valid_chars[p7];
+                                    password[7] = valid_chars[p8];
+                                    password[8] = '\0';
+
+                                    uint8_t v6[9];
+                                    int32_t v4 = 0;
+
+                                    for (int i = 0; i < 9; i++) {
+                                        v6[i] = password[i] ^ username[i];
+                                        v4 += v6[i] - 4 * i;
+                                    }
+
+                                    if (v4 == 0xf5) {
+                                        return;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+int main() {
+    char password[9] = {0};
+
+    find_valid_password(password);
+
+    printf("Username: %s\n", username);
+    printf("Password: %s\n", password);
+
+    return 0;
+}
+```
+![](/assets/img/posts/2024-07-29-ICMTC_Finals_CTF/41.png)
+![](/assets/img/posts/2024-07-29-ICMTC_Finals_CTF/42.png)
+
+# _**This is the end of this writeup. Thanks for reading! I hope you enjoyed and learned something from it. I also hope the explanations were clear. If you have any questions or comments, feel free to contact me on [LinkedIn](https://www.linkedin.com/in/youssef-ayman-79092624b/) — [Discord](https://discord.com/users/605894319408283678) — [GitHub](https://www.github.com/ELJoOker2004).**_
