@@ -223,4 +223,4 @@ else:
 ## Chihiro
 **Under Construction**
 
-but you can read the awesome write-up written by my teammate **Eslam** here
+but you can read the awesome write-up written by my teammate **Eslam** [here](https://medium.com/@0xMr_Robot/ascwg-quals-ctf-2024-reverse-challenges-9405a03bea01)
