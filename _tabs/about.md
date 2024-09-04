@@ -17,9 +17,9 @@ Eager to absorb knowledge 💡, I enjoy diving into new tech and using it to sol
     <ul>
       <li>Reverse Engineering</li>
       <li>Malware Analysis</li>
+      <li>Digital Forensics</li>
       <li>Cybersecurity</li>
       <li>CTFs</li>
-      <li>Problem Solving</li>
     </ul>
   </div>
   <div class="flex-item">
