@@ -18,7 +18,7 @@ image:
 <span style="font-size:20px">During the competition I've solved 2 Reverse engineering challenges both were first bloods and one of them is the only solve during the competition</span>
 
 Starting with the easy one;
-# trst
+## trst
 A windows exe file, on the first look using IDA this is the main function
 
 ![](assets/img/posts/2024-09-24-ASCWG Finals/1.png)
@@ -42,7 +42,7 @@ And that’s where I found the flag.
 
 ![](assets/img/posts/2024-09-24-ASCWG Finals/4.png)
 
-# 10100111
+## 10100111
 
 This challenge was a Linux ELF file
 
