@@ -15,7 +15,7 @@ image:
 !-->
 <span style="font-size:20px">I'm happy to announce that I've participated in the finals of Arab Security Cyber War Games and achieved 9th place</span>
 
-<span style="font-size:20px">During the competition I've solved 2 Reverse engineering challenges both were first bloods and one of them is the only solve during the competition</span>
+<span style="font-size:20px">During the competition I've solved 2 Reverse engineering challenges both were <span style="color:red">first bloods</span> and one of them is the <span style="color:red">only solve</span> during the competition</span>
 
 Starting with the easy one;
 ## trst
