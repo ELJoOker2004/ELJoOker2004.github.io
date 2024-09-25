@@ -17,16 +17,16 @@ Eager to absorb knowledge 💡, I enjoy diving into new tech and using it to sol
     <ul>
       <li>Reverse Engineering</li>
       <li>Malware Analysis</li>
+      <li>Digital Forensics</li>
       <li>Cybersecurity</li>
       <li>CTFs</li>
-      <li>Problem Solving</li>
     </ul>
   </div>
   <div class="flex-item">
     <h2>✍ Personal Informations</h2>
     <ul>
       <li><a href="https://linktr.ee/eljooker04" target="_blank">Linktree</a></li>
-      <li><a href="https://drive.google.com/file/d/15-ZUFQri5x7ontGIToQk_Lz7bIeKrHs-/view?usp=sharing" target="_blank">CV</a></li>
+      <li><a href="https://drive.google.com/file/d/109dDeQnd4hrm0fR6Mg4qG3bZFEsN4wcQ/view?usp=sharing" target="_blank">CV</a></li>
     </ul>
   </div>
 </div>
