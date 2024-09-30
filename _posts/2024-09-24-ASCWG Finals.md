@@ -6,7 +6,7 @@ tags: [CTF, Cybersecurity, Reverse Engineering, Writeup]
 description: Write up for ASCWG Finals Reverse Engineering Challenge.
 #last_modified_at: 2024-09-24 8:30:43 +0300
 image:
-  path: https://scontent.fcai19-1.fna.fbcdn.net/v/t39.30808-6/432925190_736039495304369_4295595742923863625_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=kWCICMLGYT8Q7kNvgH-u3_5&_nc_ht=scontent.fcai19-1.fna&_nc_gid=Apqf_9M31vCngnwFUzsiUEz&oh=00_AYAu1ojRt5A-FLz8SnfkS4nLsDR4bAxUBV0657VYNCzACA&oe=66F8B74F
+  path: /assets/img/posts/2024-09-24-ASCWG Finals/0.jpg
 ---
 # Introduction
 
