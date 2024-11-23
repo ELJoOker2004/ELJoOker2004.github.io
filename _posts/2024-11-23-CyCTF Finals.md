@@ -20,7 +20,7 @@ I'll be sharing the solutions for the reverse engineering challenges, hope you l
 
 ## 1n7ern4ls
 
-| challenge link              | [https://ctf.cybersecurityctf.com/challenges/1n7ern4ls](https://ctf.cybersecurityctf.com/challenges/1n7ern4ls)
+| challenge link              | [https://drive.google.com/file/d/16d3jeKxpGTeV7j57mMmYK9pqCv7QbvIp/view?usp=sharing](https://drive.google.com/file/d/16d3jeKxpGTeV7j57mMmYK9pqCv7QbvIp/view?usp=sharing)
 | password                    | cyctf2024
 
 *I suggest downloading the files so you can follow up with me*
