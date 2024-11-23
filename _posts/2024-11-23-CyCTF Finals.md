@@ -16,7 +16,7 @@ image:
 
 ![](/assets/img/posts/2024-11-23-CyCTF Finals/WA.jpeg)
 
-I'll be sharing the solutions for reverse the engineering challenges, hope you like it.
+I'll be sharing the solutions for the reverse engineering challenges, hope you like it.
 
 ## 1n7ern4ls
 
