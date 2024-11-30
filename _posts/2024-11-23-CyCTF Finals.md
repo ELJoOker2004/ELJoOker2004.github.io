@@ -4,7 +4,7 @@ date: 2024-11-23 13:11:43 +0300
 categories: [CTF]
 tags: [CTF, Cybersecurity, Reverse Engineering, Writeup, Walkthrough]
 description: Write up for CyCTF 2024 Finals Reverse Engineering Challenge.
-last_modified_at: 2024-08-2 8:30:43 +0300
+last_modified_at: 2024-11-28 4:30:43 +0300
 image:
   path: /assets/img/posts/2024-11-23-CyCTF%20Finals/cover.png
 ---
@@ -147,4 +147,98 @@ Repeat
 Here's your gift: CyCTF{h0w_c0nfus1n9_w1nd0w$_@P1s__xXxXx}
 ```
 
-Stay tuned for the rest of the challenges
+
+
+## IH8PeterPan
+
+### First look
+
+For this challenge, we got a 64-bit DLL that have only 1 export other than entry point
+
+and it basically does almost nothing 🤷‍♂️
+
+![](/assets/img/posts/2024-11-23-CyCTF%20Finals/10.png)
+
+deeper look in the DLL, I found some strange strings
+
+![](/assets/img/posts/2024-11-23-CyCTF%20Finals/11.png)
+
+Taking a look on XREFS, I ended up in pdata section with a lot of runtime function
+
+![](/assets/img/posts/2024-11-23-CyCTF%20Finals/12.png)
+
+Each part will do some operations and then returns a specific number, which can be presented as an ascii letter
+
+and we can confirm that easily by debugging the DLL in x64dbg and setting the RIP on the first part directly and step until return
+
+![](/assets/img/posts/2024-11-23-CyCTF%20Finals/13.png)
+![](/assets/img/posts/2024-11-23-CyCTF%20Finals/14.png)
+
+If we continue stepping through the code, skipping the return instructions, we'll notice that these characters eventually form meaningful words.
+
+However, manually doing that for over 800 parts is a daunting task.
+
+Fortunately, as we observed earlier in IDA, all these parts are contiguous, with the only obstacle being the `ret` instructions that prevent us from executing them sequentially.
+
+To overcome this, we need to find a workaround.
+
+### Lazy mentality
+
+The approach I thought of was patching all these `ret` instruction with `nop` instructions
+
+because the pattern before each `ret` is identical, we can get a unique array of bytes for all `ret` instructions and replace the opcode of `ret` with `0x90` directly
+
+![](/assets/img/posts/2024-11-23-CyCTF%20Finals/15.png)
+![](/assets/img/posts/2024-11-23-CyCTF%20Finals/16.png)
+
+> Note: there are 2 different sequences of bytes for `ret` so you need to patch both of them
+{: .prompt-warning }
+
+```
+0F B6 00 48 83 C4 30 5D C3 -> 0F B6 00 48 83 C4 30 5D 90
+0F B6 00 48 83 C4 10 5D C3 -> 0F B6 00 48 83 C4 10 5D 90
+```
+
+I won't overkill this by doing a script or something, I'll just replace the desired bytes with HxD
+
+![](/assets/img/posts/2024-11-23-CyCTF%20Finals/17.png)
+![](/assets/img/posts/2024-11-23-CyCTF%20Finals/18.png)
+
+and here's our binary patched
+
+![](/assets/img/posts/2024-11-23-CyCTF%20Finals/19.png)
+
+### Tracing
+
+Now, we need a way to log all the values of `rax` at this nop instruction
+
+Fortunately, xdbg offers a very powerful feature called [**tracing**](https://help.x64dbg.com/en/latest/introduction/ConditionalTracing.html), we can trace the execution while logging the the values we need of any register.
+
+The first idea I had was making a condition to only log value of `rax` if the current instruction is a `nop`, but couldn't craft it's syntax properly.
+
+so my other idea was to log all instructions with the value of `rax` and then filter it with notepad++
+
+So the steps will be as the following
+
+1. setting the instruction pointer on the start of **part1** function
+2. use **trace into** option with the following settings
+  - Log Text: `{i:cip} | rax : {rax}` # i = instruction as text, cip = current instruction pointer, rax = value of rax       [xdbg string formatting](https://help.x64dbg.com/en/latest/introduction/Formatting.html)
+  - ![](/assets/img/posts/2024-11-23-CyCTF%20Finals/20.png)
+3. specify a log file
+4. might need to increase maximum trace count to something like 500000
+
+after it finished tracing, and we got our log file, I'll filter only line with `nop` instruction
+
+![](/assets/img/posts/2024-11-23-CyCTF%20Finals/21.png)
+
+copy all of them and filter only for the value of `rax`, head to cyberchef and get your gift
+
+![](/assets/img/posts/2024-11-23-CyCTF%20Finals/22.png)
+
+```
+CyCTF{b!n@ry_1n$trum3nt@t10n_!S_4W350M3!}
+```
+
+## OG
+
+> Stay tuned for the rest of the challenges
