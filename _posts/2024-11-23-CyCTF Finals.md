@@ -241,4 +241,64 @@ CyCTF{b!n@ry_1n$trum3nt@t10n_!S_4W350M3!}
 
 ## OG
 
-> Stay tuned for the rest of the challenges
+For this challenge, we have flag.enc and an ELF file,
+
+### First Look
+
+The first thing I did was running the ELF file, it asked for argument so I gave it the flag.enc file but it gave me output "bad file"
+
+![](/assets/img/posts/2024-11-23-CyCTF%20Finals/23.png)
+
+### IDA Time
+
+Ok, it's time to start analyzing this, I opened IDA and the binary was really big, with a lot of code and functions at the point where you don't even know where to start
+
+so, I started with searching for the string "bad file" as a first step, and found it inside another big function with a lot of switch cases
+
+![](/assets/img/posts/2024-11-23-CyCTF%20Finals/24.png)
+
+We notice here that it's trigged on the case 38, so let's see what leads to this
+
+![](/assets/img/posts/2024-11-23-CyCTF%20Finals/25.png)
+
+nothing looks relevant here, let's see what leads to this 32
+
+![](/assets/img/posts/2024-11-23-CyCTF%20Finals/26.png)
+
+this might be useful, as there is a function call here, let's examine it
+
+Inside there, there was another function call, and by following like 2 calls, I ended up in a function that looked intersting enough `sub_451B20`
+
+at this point, I started debugging to see if I can notice anything that might be useful.
+
+And after some stepping in this function I ended up in a variable being set to my `flag.enc` file magic bytes
+
+![](/assets/img/posts/2024-11-23-CyCTF%20Finals/27.png)
+
+![](/assets/img/posts/2024-11-23-CyCTF%20Finals/28.png)
+
+what I noticed here, was that `v7` and `v8` takes holds the first 8 bytes of a1 and a2, and then `v6` is calculated by subtracting `v8` from `v7` and if `v6` is not equal to 0, it will return from this function and eventually leading to the "bad file" output
+
+But I noticed the magic bytes that being compared to our file is actually the PNG magic bytes!
+
+![](/assets/img/posts/2024-11-23-CyCTF%20Finals/29.png)
+
+Let's change the magic bytes of the flag.enc file and give it as argument and hope that maybe this will be some progress?
+
+After doing that, It outputted `out.enc` file, when I opened it in hex editor, the whole flag.enc was actually changed but with an unknown magic bytes again, but as the file is relatively big and according to our case here, I suspected that is has to be some kind of Image so I changed the magic bytes of the file to PNG again, and voila, it's our flag!
+
+![](/assets/img/posts/2024-11-23-CyCTF%20Finals/30.png)
+
+```
+CyCTF{M@zl0um_F3_H0b3k_Ya_M@5r}
+```
+
+## babypwn
+
+I'm not doing a write up for this one 😡
+
+![](/assets/img/posts/2024-11-23-CyCTF%20Finals/31.png)
+
+
+## fs0c137y
+> Stay tuned
