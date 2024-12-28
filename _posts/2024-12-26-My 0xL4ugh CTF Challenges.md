@@ -123,11 +123,12 @@ I'll be splitting the main function into parts and explaining each part.
     ;
   fclose(v3);
   ```
-For this here, we see it get's `Downloads` and `Desktop` folders paths and gets the path of the temp folder.
+- For this here, we see it get's `Downloads` and `Desktop` folders paths and gets the path of the temp folder.
 
-define `v30` with `".png"` and `".txt"` and then pass this variable to `sub_1400010C0` function.
+- define `v30` with `".png"` and `".txt"` and then pass this variable to `sub_1400010C0` function.
 
-we can also see that it creates a temp file `v3 = fopen(TempFileName, "w");` and passes it to `sub_1400010C0`.
+- we can also see that it creates a temp file `v3 = fopen(TempFileName, "w");` and passes it to `sub_1400010C0`.
+
 #### sub_1400010C0
 
 ```c
@@ -173,7 +174,7 @@ LABEL_16:
   return (int)FirstFileA;
 ```
 
-we can tell from this, that this function basically enumerates for the all paths of the files with the given extension
+- we can tell from this, that this function basically enumerates for the all paths of the files with the given extension
 
 ### part 2
 
@@ -232,9 +233,9 @@ LABEL_50:
   DeleteFileA(TempFileName);
 ```
 
-This part here seems to be related to handling the file paths and allocating some memory and will store valid lines in `v9` array.
+- This part here seems to be related to handling the file paths and allocating some memory and will store valid lines in `v9` array.
 
-Then will close the handle to that temp file and delete it.
+- Then will close the handle to that temp file and delete it.
 
 ### part 3
 
@@ -263,7 +264,7 @@ if ( sub_140001060(v32, 0x104uLL, "%s\\Exfiltrated_data.zip", Buffer) < 260 )
     }
 
 ```
-This part here constructs strings for the zip file and the image file and then passes the zip file name to `sub_140001270` function.
+- This part here constructs strings for the zip file and the image file and then passes the zip file name to `sub_140001270` function.
   
 a deeper look inside `sub_140001270` function...
 
@@ -333,7 +334,7 @@ v3 = a2;
   return (unsigned int)-((unsigned int)zipClose(v5, 0LL) != 0);
   ```
 
-the summarization of this function is that it creates a ZIP archive containing files specified in the `v9` array.
+- the summarization of this function is that it creates a ZIP archive containing files specified in the `v9` array.
 
 ### part 4
 
@@ -414,16 +415,16 @@ LABEL_27:
   return 1;
   ```
 
-  After the zip file is created, the program will run `sdelete.exe` to delete all the files it successfully exfiltrated.
+-  After the zip file is created, the program will run `sdelete.exe` to delete all the files it successfully exfiltrated.
 
-  then there is a call to `sub_140001480` which takes the created zip file path and also the image file path as arguments, which indicates that this is where the work on image is being done.
+-  then there is a call to `sub_140001480` which takes the created zip file path and also the image file path as arguments, which indicates that this is where the work on image is being done.
 
 
 #### sub_140001480
 
 it's a pretty big function so I'll be splitting the important parts of it.
 
-it generates a random XOR key by `BCryptGenRandom`
+- it generates a random XOR key by `BCryptGenRandom`
 
 ```c
   if ( BCryptOpenAlgorithmProvider(&phAlgorithm, L"RNG", 0LL, 0) )
@@ -439,7 +440,7 @@ it generates a random XOR key by `BCryptGenRandom`
   }
 ```
 
-XOR file content with the generated key
+- XOR file content with the generated key
 
 ```c
     do
@@ -452,7 +453,7 @@ XOR file content with the generated key
     while ( v13 < (int)v7 );
 ```
 
-Computes a CRC32 checksum over the XOR key and file length metadata.
+- Computes a CRC32 checksum over the XOR key and file length metadata.
 
 ```c
   v71 = *(unsigned int *)pbBuffer;
@@ -461,7 +462,7 @@ Computes a CRC32 checksum over the XOR key and file length metadata.
   v18 = crc32(v17, &v71, 12LL);
 ```
 
-Packages metadata (checksum, XOR key, file length) with the encrypted file contents into a single buffer in order to include them in the encrypted image.
+- Packages metadata (checksum, XOR key, file length) with the encrypted file contents into a single buffer in order to include them in the encrypted image.
 
 ```c
 v20 = malloc(v19);
@@ -471,10 +472,11 @@ v20 = malloc(v19);
 memcpy(v20 + 16, v12, v7);  // Store encrypted data
 ```
 
-then the encoded data is broken into blocks that fit the dimensions of the PNG image.
-Each "pixel" in the image represents 4 bytes of the data (one byte per color channel).
+- then the encoded data is broken into blocks that fit the dimensions of the PNG image.
 
-and lastly save the image in the `Temp` folder.
+- Each "pixel" in the image represents 4 bytes of the data (one byte per color channel).
+
+- and lastly save the image in the `Temp` folder.
 
 returning to our main function
 
