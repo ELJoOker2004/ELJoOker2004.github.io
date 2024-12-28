@@ -1,10 +1,10 @@
 ---
 title: "0xL4ugh CTF Challenges Official Writeup"
-date: 2024-12-26 01:01:43 +0300
+date: 2024-12-28 15:01:43 +0300
 categories: [CTF Author]
 tags: [CTF, Cybersecurity, Reverse Engineering, Writeup, Walkthrough]
 description: Write up for my reverse engineering challenges in 0xL4ugh CTF.
-last_modified_at: 2024-12-26 1:30:43 +0300
+last_modified_at: 2024-12-29 1:03:43 +0300
 image:
   path: /assets/img/posts/2024-12-26-My 0xL4ugh CTF Challenges/cover.jpg
 ---
@@ -12,6 +12,8 @@ image:
 Hello folks, it was an honor for me to write reverse engineering challenges for 0xL4ugh CTF. I'm happy to share my solutions for the challenges I created (Chessato and The Joker 2).
 
 ## Chessato
+
+| Challenge Files |               [Download](https://drive.google.com/file/d/1M7jMoBwP7GdVMxlKvBupl61UwfLf2MjW/view?usp=sharing) |         File password: `ELJoOker` |
 
 ### Description
 ```
@@ -76,6 +78,8 @@ _ez pz_
 `0xL4ugh{A_H0n0ur4ble_B4tt13_B3tw33n_K1NG5}`
 
 ## The Joker 2
+
+| Challenge Files |               [Download](https://drive.google.com/file/d/1AgBSq4HiQ-9p2O_0nSg5B4M7BoNuua9p/view?usp=sharing) |         File password: `ELJoOker` |
 
 ### Description
 ```
