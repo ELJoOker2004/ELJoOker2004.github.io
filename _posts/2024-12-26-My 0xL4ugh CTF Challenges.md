@@ -547,7 +547,7 @@ and here is the exfiltrated data in the zip file.
 
 ![](/assets/img/posts/2024-12-26-My%200xL4ugh%20CTF%20Challenges/12.png)
 
-![](/assets/img/posts/2024-12-26-My%200xL4ugh%20CTF%20Challenges/stand_Proud_You_Are_Strong.png)
+![](/assets/img/posts/2024-12-26-My%200xL4ugh%20CTF%20Challenges/Stand_Proud_You_Are_Strong.png)
 
 
 ### Last words
