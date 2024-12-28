@@ -13,7 +13,7 @@ Hello folks, it was an honor for me to write reverse engineering challenges for 
 
 ## Chessato
 
-#### Description
+### Description
 ```
   We will be playing chess, but with my own rules 
   Can you beat me in 1 move?
@@ -21,7 +21,7 @@ Hello folks, it was an honor for me to write reverse engineering challenges for 
 
 ![](/assets/img/posts/2024-12-26-My%200xL4ugh%20CTF%20Challenges/1.png)
 
-
+### First look
 What a nice looking chess game we got here :)
 
 ![](/assets/img/posts/2024-12-26-My%200xL4ugh%20CTF%20Challenges/2.png)
@@ -61,6 +61,8 @@ Let's search for the logic behind how the pieces move.
 we can see in `Chessman` class the methods that handle the movement of our pieces.
 
 ![](/assets/img/posts/2024-12-26-My%200xL4ugh%20CTF%20Challenges/8.png)
+
+### solution
 
 so the approach was to be able to move the way we want, let's first start by modifying the `SurroundMovePlate` method as it's responsible for the movement of our king.
 
