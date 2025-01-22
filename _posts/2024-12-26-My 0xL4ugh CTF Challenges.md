@@ -560,7 +560,7 @@ and here is the exfiltrated data in the zip file.
 
 ### Last words
 
-> Thanks for reading and playing the CTF. I hope you liked the challenges and had a lot of fun while learning something new. type prompt.
+> Thanks for reading and playing the CTF. I hope you liked the challenges and had a lot of fun while learning something new.
 {: .prompt-info }
 
 ***If you have any questions or comments, feel free to contact me on [LinkedIn](https://www.linkedin.com/in/eljooker) — [Discord](https://discord.com/users/605894319408283678) — [GitHub](https://github.com/ELJoOker2004)***
