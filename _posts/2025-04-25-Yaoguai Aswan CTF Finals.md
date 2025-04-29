@@ -19,7 +19,7 @@ _Unfortunately, I'm not in the photo because the ceremony was delayed and I had 
 
 __This write up is for the second reverse engineering challenge mainly ( stay tuned for the 3rd one ), but I'll give a quick walkthrough in the first challenge__
 
-## First Challenge
+## First Challenge ( EAAS )
 
 we are given a binary and a cipher `CAS{Y6oduOh_X3_gQu3xn6t_EXF_J3vxhf_Ca_3yM7zln}`
 
