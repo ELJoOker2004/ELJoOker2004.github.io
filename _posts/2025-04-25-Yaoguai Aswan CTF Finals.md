@@ -65,7 +65,7 @@ this will output: `BAO{W3lcoMe_T0_aNo0th3r_CTF_H0sted_By_0xL4ugh}`
 
 a small tweak to match the flag format and here is the flag
 
-`CAO{W3lcoMe_T0_aNo0th3r_CTF_H0sted_By_0xL4ugh}`
+`YAO{W3lcoMe_T0_aNo0th3r_CTF_H0sted_By_0xL4ugh}`
 
 ## Second Challenge ( 3agamesta )
 
