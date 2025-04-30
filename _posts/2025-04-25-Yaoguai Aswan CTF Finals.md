@@ -115,7 +115,7 @@ first interesting thing is this function
 
 ![](/assets/img/posts/2025-04-25-Yaoguai%20Aswan%20CTF%20Finals/6.png)
 
-inside, it basically calls a `RandomGeneration` function, and it was called twice, so it will generate to random numbers, one with size of 32 and the other with size of 12 (pretty interesting lengths (can assume a key and IV but let's make sure))
+inside, it basically calls a `RandomGeneration` function, and it was called twice, so it will generate two random numbers, one with size of 32 and the other with size of 12 (pretty interesting lengths (can assume a key and IV but let's make sure))
 
 ![](/assets/img/posts/2025-04-25-Yaoguai%20Aswan%20CTF%20Finals/7.png)
 
@@ -183,13 +183,12 @@ executing both and looking at results, we see it embeds both key and encrypted I
 
 
 ### Problem
-now, we can get the original KEY and encrypted IV used to encrypted the flag.png file, but there is still a problem, the IV is RSA encrypted, without the private key we can't decrypt it
+now, we can get the original KEY and encrypted IV used to encrypt the flag.png file, but there is still a problem, the IV is RSA encrypted, without the private key we can't decrypt it
 
 what private key consists of is
 
 - n (the modulus) The same modulus used in the public key.
-- d (the private exponent) A number that is the modular multiplicative inverse of e modulo 
-(p−1)(q−1)
+- d (the private exponent) A number that is the modular multiplicative inverse of e modulo (p−1)(q−1)
 
 in order to get the private exponent, we need to know the prime numbers p and q, but we can't because we only have the modulus n
 
@@ -204,7 +203,7 @@ unknown factors but wait, the status is __P__ (prime)
 
 There can't be a prime __n__
 
-And this is actually a known wrong RSA implementation . With that info alone, we can calculate __d__ as follows
+And this is actually a known wrong RSA implementation. With that info alone, we can calculate __d__ as follows
 
 ![](/assets/img/posts/2025-04-25-Yaoguai%20Aswan%20CTF%20Finals/18.png)
 
@@ -235,7 +234,7 @@ e = 65537
 cipher = bytes.fromhex("80 C0 EC CF FB CF 6D 35 69 AC 35 43 FD 5D 7F 8C F9 FD 7B E3 47 84 0F 51 61 A2 F9 27 89 0F C5 07 1D AD D4 36 DE BB 34 CF 6A 4B A1 36 28 D3 F3 B6 43 41 86 C1 A8 55 FB 60 10 5B EB C3 04 B3 DD 33 C1 4D 4C E7 64 61 C4 D7 DB 7F 06 01 2A 17 F2 DE 00 51 45 59 37 08 1D AD 97 4E 99 71 12 DB BA 64 DB 27 71 2E 7B E6 29 81 9F 44 8D 92 6F 21 C5 05 52 C9 CC B9 FE EC 34 46 9B 5E 6A 1D 1C F5 CB 51")
 #print(cipher)
 
-c = int.from_bytes(cipher, 'little') # little endian because of how `System_Runtime_Numerics_System_Numerics_BigInteger__TryGetBytes` actually words
+c = int.from_bytes(cipher, 'little') # little endian because of how `System_Runtime_Numerics_System_Numerics_BigInteger__TryGetBytes` actually works
 
 phi = n - 1  
 
