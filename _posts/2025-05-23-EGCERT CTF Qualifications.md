@@ -12,7 +12,7 @@ image:
 ## Introduction
 
 <div align="center">
-  <span style="font-size:22px"><span class="highlight-text">Thrilled to announce that we've secured the <span style="color:red">2nd</span> place in the Qualifications phase of <span style="color:green">EG-CERT CTF 2025</span> with my amazing team as always <span style="color:cyan">"Gen-Z"</span></span>
+  <span style="font-size:22px"><span class="highlight-text">Thrilled to announce that we've secured the <span style="color:red">1st</span> place in the Qualifications phase of <span style="color:green">EG-CERT CTF 2025</span> with my amazing team as always <span style="color:cyan">"Gen-Z"</span></span>
   </span>
 </div>
 
