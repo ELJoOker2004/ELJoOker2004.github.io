@@ -260,11 +260,11 @@ The hint says that there might be some additional levels in the game, so let's t
 
 ### Know your tools
 
-For hacking unity games, there no tool better than **Unity Engine** with **Melon loader**
+For hacking unity games, there no tool better than **Unity Explorer** with **Melon loader**
 
-But lately, unity engine doesn't get updated, so it doesn't work on newer versions of unity games
+But lately, unity explorer doesn't get updated, so it doesn't work on newer versions of unity games
 
-But thanks to the power of open-source, there are forks online with hotfixes for that, one of them is [this repo](https://github.com/GrahamKracker/UnityExplorer) to download **Unity Engine**
+But thanks to the power of open-source, there are forks online with hotfixes for that, one of them is [this repo](https://github.com/GrahamKracker/UnityExplorer) to download **Unity explorer**
 
 Once you have melon loader downloaded, simply add your game and install it
 
