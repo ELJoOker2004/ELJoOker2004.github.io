@@ -1,12 +1,12 @@
 ---
 title: "CAT CTF 25 RE Challenges Official Writeup"
-date: 2025-8-22 00:00:00 +0300
+date: 2025-08-22 00:00:00 +0300
 categories: [CTF Author]
 tags: [CTF, Cybersecurity, Reverse Engineering, Writeup, Walkthrough]
 description: Write up for my reverse engineering challenges in CAT CTF 25.
-last_modified_at: 2025-8-22 00:00:00 +0300
+last_modified_at: 2025-08-22 00:00:00 +0300
 image:
-  path: /assets/img/posts/2025-8-22-My CAT CTF 25 Challenges/cover.png
+  path: /assets/img/posts/2025-08-22-My CAT CTF 25 Challenges/cover.png
 ---
 
 ## Introduction
@@ -28,7 +28,7 @@ I've created 3 challenges in this CTF, all of them are easy to solve, but introd
 </div>
 ## Pickle
 
-![](/assets/img/posts/2025-8-22-My%20CAT%20CTF%2025%20Challenges/1.png)
+![](/assets/img/posts/2025-08-22-My%20CAT%20CTF%2025%20Challenges/1.png)
 
 #### Introduction
 
@@ -36,7 +36,7 @@ This challenge focuses on a type of file called **pickle**, which is used to ser
 
 Players are provided with 3 files, 2 python helpers to run the `pkl` file, and 1 `chall.pkl` which holds the actual code
 
-![](/assets/img/posts/2025-8-22-My%20CAT%20CTF%2025%20Challenges/2.png)
+![](/assets/img/posts/2025-08-22-My%20CAT%20CTF%2025%20Challenges/2.png)
 
 #### Idea
 
@@ -101,14 +101,14 @@ rehyd._rehydrate = dumping_rehydrate         # overwrite in-place
 ##### dumped_flag_checker.pyc
 
 After decompiling the pyc file (I used pylingual for decomplication), it's a very large source code with a lot of functions looks very similar
-![](/assets/img/posts/2025-8-22-My%20CAT%20CTF%2025%20Challenges/3.png)
-![](/assets/img/posts/2025-8-22-My%20CAT%20CTF%2025%20Challenges/4.png)
+![](/assets/img/posts/2025-08-22-My%20CAT%20CTF%2025%20Challenges/3.png)
+![](/assets/img/posts/2025-08-22-My%20CAT%20CTF%2025%20Challenges/4.png)
 
 We can assume that only one of them will be executed, that hold the real flag checking routine
 
 One way to know the exact function, is to take a look at the `chall.pkl` you find a string pointing to the actual entry point at the end of the file
 
-![](/assets/img/posts/2025-8-22-My%20CAT%20CTF%2025%20Challenges/5.png)
+![](/assets/img/posts/2025-08-22-My%20CAT%20CTF%2025%20Challenges/5.png)
 
 The code of desired functions:
 ```python
@@ -234,7 +234,7 @@ And teach you how to deal with strange file types you might face in real life sc
 
 ## Aimlab.exe
 
-![](/assets/img/posts/2025-8-22-My%20CAT%20CTF%2025%20Challenges/6.png)
+![](/assets/img/posts/2025-08-22-My%20CAT%20CTF%2025%20Challenges/6.png)
 
 If you know me, you will know that I can't be an author in a CTF without writing a game hacking challenge😂.
 
@@ -248,11 +248,11 @@ I built this game with Il2Cpp instead of mono, so there is no open source code a
 
 The first look on the challenge, it's a unity game, a very simple shooter game
 
-![](/assets/img/posts/2025-8-22-My%20CAT%20CTF%2025%20Challenges/7.png)
+![](/assets/img/posts/2025-08-22-My%20CAT%20CTF%2025%20Challenges/7.png)
 
 We are i a room with a text "1", when we kill all targets, we move to room 2
 
-![](/assets/img/posts/2025-8-22-My%20CAT%20CTF%2025%20Challenges/8.png)
+![](/assets/img/posts/2025-08-22-My%20CAT%20CTF%2025%20Challenges/8.png)
 
 And nothing happens after that.
 
@@ -268,12 +268,12 @@ But thanks to the power of open-source, there are forks online with hotfixes for
 
 Once you have melon loader downloaded, simply add your game and install it
 
-![](/assets/img/posts/2025-8-22-My%20CAT%20CTF%2025%20Challenges/9.png)
-![](/assets/img/posts/2025-8-22-My%20CAT%20CTF%2025%20Challenges/10.png)
+![](/assets/img/posts/2025-08-22-My%20CAT%20CTF%2025%20Challenges/9.png)
+![](/assets/img/posts/2025-08-22-My%20CAT%20CTF%2025%20Challenges/10.png)
 
 Now go to where you downloaded unity explorer, and copy the folders inside to the game's folder, and open the game
 
-![](/assets/img/posts/2025-8-22-My%20CAT%20CTF%2025%20Challenges/11.png)
+![](/assets/img/posts/2025-08-22-My%20CAT%20CTF%2025%20Challenges/11.png)
 
 You will find yourself facing a weird interface that feels like you are real hacker XD
 
@@ -283,17 +283,17 @@ I won't go into details about unity explorer, it's a task for you to search abou
 
 But from the home interface you can identify few things, like object explorer, some objects with names related to the game objects
 
-![](/assets/img/posts/2025-8-22-My%20CAT%20CTF%2025%20Challenges/12.png)
+![](/assets/img/posts/2025-08-22-My%20CAT%20CTF%2025%20Challenges/12.png)
 
 One of the really basic features you can apply to the objects in the game is to just disable them, you will also notice a feature named freecam, which can be helpful to explore the game environment faster
 
-![](/assets/img/posts/2025-8-22-My%20CAT%20CTF%2025%20Challenges/13.png)
+![](/assets/img/posts/2025-08-22-My%20CAT%20CTF%2025%20Challenges/13.png)
 
 After a little bit of exploring, you find a hint to tell you look from above.
 
 And here you go
 
-![](/assets/img/posts/2025-8-22-My%20CAT%20CTF%2025%20Challenges/14.png)
+![](/assets/img/posts/2025-08-22-My%20CAT%20CTF%2025%20Challenges/14.png)
 
 `CATF{W4LL_H4CK_4CTIV4T3D}`
 
@@ -306,7 +306,7 @@ And also introduce you to unity IL2Cpp games, there are still many internals and
 
 ## pout
 
-![](/assets/img/posts/2025-8-22-My%20CAT%20CTF%2025%20Challenges/15.png)
+![](/assets/img/posts/2025-08-22-My%20CAT%20CTF%2025%20Challenges/15.png)
 
 ### Introduction
 
@@ -318,8 +318,8 @@ And by simple I really mean **simple**
 
 - First step: Open IDA and take a look at this piece of art
 
-![](/assets/img/posts/2025-8-22-My%20CAT%20CTF%2025%20Challenges/16.png)
-![](/assets/img/posts/2025-8-22-My%20CAT%20CTF%2025%20Challenges/17.png)
+![](/assets/img/posts/2025-08-22-My%20CAT%20CTF%2025%20Challenges/16.png)
+![](/assets/img/posts/2025-08-22-My%20CAT%20CTF%2025%20Challenges/17.png)
 _look how cute fern can be_
 
 As a first step to solve a flag checker program, is to see when will it compare your input with the hardcoded flag.
@@ -334,11 +334,11 @@ As a first try, let's give the program dummy input, try to break before the end 
 
 You can identify the ending blocks by zooming in a little bit and notice a change in the long horizontal line.
 
-![](/assets/img/posts/2025-8-22-My%20CAT%20CTF%2025%20Challenges/18.png)
+![](/assets/img/posts/2025-08-22-My%20CAT%20CTF%2025%20Challenges/18.png)
 
 - Second step: break on all block, give the program input, and when the program breaks, take a look on strings.
 
-![](/assets/img/posts/2025-8-22-My%20CAT%20CTF%2025%20Challenges/19.png)
+![](/assets/img/posts/2025-08-22-My%20CAT%20CTF%2025%20Challenges/19.png)
 
 - Third step: and here is your flag :).
 
