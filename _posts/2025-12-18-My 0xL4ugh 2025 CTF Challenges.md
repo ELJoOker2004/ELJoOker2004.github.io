@@ -8,17 +8,23 @@ image:
   path: /assets/img/posts/2025-12-18-My 0xL4ugh 2025 CTF Challenges/cover.png
 ---
 
-## Introduction
 
+<p style="font-size: 1.15em;">Hello everyone! 👋 Hope you are doing great. <br>
 
-![](/assets/img/posts/2025-12-18-My%200xL4ugh%202025%20CTF%20Challenges/0.png)
+I am truly honored to have been an author for <b>0xL4ugh CTF v5</b>, which was a remarkable success.</p>
 
 <div align="center">
-  <span style="font-size:22px"><span class="highlight-text">Hello everyone! Hope you are doing great. This is more like research or a full guide rather than a regular CTF write-up. Here is an introduction to Unreal Engine game hacking demonstrated as a write-up for the UCalculator challenge, which is the challenge I created for 0xL4ugh CTF and got only 1 solve during the 48 hours of the competition.
-  <br>
-  <br>
-  </span></span>
+<iframe src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7421751900666187776" height="400" width="100%" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
 </div>
+<br>
+
+<p style="font-size: 1.15em;">For this edition, I had the opportunity to craft a unique <b>Reverse Engineering</b> challenge: <a href="https://drive.google.com/file/d/1nJfqZsmWvPYkbSgLDWrtDK9h7AOIuMAv/view?usp=drive_link" target="_blank" >UCalculator</a>, which got <b style="color: #e74c3c; font-size: 1.25em;">only 1 solve</b> during the 48 hours of the competition. It is likely the first challenge of its kind in the CTF scene, designed specifically as an introduction to <b>Reverse Engineering Unreal Engine 5 Games</b>.</p>
+
+<p style="font-size: 1.15em;">Consequently, this post is not just a standard write-up; it is a comprehensive <b style="color: #0d6efd;">research and tutorial</b>—hopefully the first of its kind—aimed at teaching the fundamentals of Unreal Engine hacking from the ground up.</p>
+
+## Introduction
+
+![](/assets/img/posts/2025-12-18-My%200xL4ugh%202025%20CTF%20Challenges/0.png)
 
 
 
@@ -150,7 +156,7 @@ Navigating to this calculated address in IDA brings us to the code:
 > **Note:** I've loaded the pdb in IDA so things can be clearer in write up, but everything can be done exactly the same even without
 {: .prompt-warning }
 
-### The Reverse Engineering
+### The Real Reverse Engineering
 
 Finally we can find a real code to reverse, and in order to make IDA identify the section we are looking at and converting it to code we can now start the auto analysis around this address so it will be much faster now because we don't need the whole binary.
 
