@@ -4,6 +4,7 @@ date: 2026-1-26 06:37:00 +0200
 categories: [Tutorials, CTF Author, Research]
 tags: [CTF, Cybersecurity, Reverse Engineering, Writeup, Walkthrough, Tutorial, Game Hacking, Research, Arabic]
 description: Detailed write-up for my Reverse Engineering challenge "UCalculator" from 0xL4ugh v5 CTF. This post covers the creation process, Unreal Engine hacking techniques, and the solution.
+last_modified_at: 2026-1-27 08:19:00 +0200
 image:
   path: /assets/img/posts/2025-12-18-My 0xL4ugh 2025 CTF Challenges/cover.png
 ---
