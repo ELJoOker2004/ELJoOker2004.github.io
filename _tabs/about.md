@@ -26,7 +26,6 @@ Eager to absorb knowledge 💡, I enjoy diving into new tech and using it to sol
     <h2>✍ Personal Informations</h2>
     <ul>
       <li><a href="https://linktr.ee/eljooker04" target="_blank">Linktree</a></li>
-      <li><a href="https://drive.google.com/file/d/109dDeQnd4hrm0fR6Mg4qG3bZFEsN4wcQ/view?usp=sharing" target="_blank">CV</a></li>
     </ul>
   </div>
 </div>
